@@ -35,7 +35,7 @@ function App() {
       <main>
         <div className="container">
           <h1>Crea un nuovo post!</h1>
-          <form onChange={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             {/* INSERT AUTHOR HERE */}
             <div className="mb-4 mt-4 fw-bold">
               <label className="form-label">Autore</label>
@@ -45,18 +45,18 @@ function App() {
             {/* INSERT TITLE OF YOUR POST HERE */}
             <div className="mb-4 fw-bold">
               <label className="form-label">Titolo</label>
-              <input type="text" name="title" className="form-control" placeholder="Titolo del tuo post" />
+              <input value={formData.title} type="text" name="title" className="form-control" placeholder="Titolo del tuo post" onChange={(e) => setFormData({ ...formData, title: e.target.value })} />
             </div>
 
             {/* INSERT THE BODY OF YOUR POST HERE */}
             <div className="mb-4 fw-bold">
               <label className="form-label">Testo del tuo post</label>
-              <textarea name="body" className="form-control" placeholder="Scrivi qui il contenuto del tuo post"></textarea>
+              <textarea value={formData.body} name="body" className="form-control" placeholder="Scrivi qui il contenuto del tuo post" onChange={(e) => setFormData({ ...formData, body: e.target.value })}></textarea>
             </div>
 
             {/* IS YOUR POST PUBLIC OR NOT? */}
             <div className="mb-4 form-check">
-              <input type="checkbox" name="public" className="form-check-input" />
+              <input type="checkbox" name="public" className="form-check-input" checked={formData.public} onChange={(e) => setFormData({ ...formData, public: e.target.checked })} />
               <label className="form-check-label">Vuoi che il post sia pubblico?</label>
             </div>
 
