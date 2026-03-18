@@ -18,11 +18,10 @@ function App() {
   })
 
   /* Handling form submission and preventing page reload with e.preventDefault() */
-  const handleSubmit = (e) => (
+  const handleSubmit = (e) => {
     e.preventDefault()
-  )
-
-
+    console.log(formData);
+  }
 
 
   return (
@@ -36,11 +35,11 @@ function App() {
       <main>
         <div className="container">
           <h1>Crea un nuovo post!</h1>
-          <form>
+          <form onChange={handleSubmit}>
             {/* INSERT AUTHOR HERE */}
             <div className="mb-4 mt-4 fw-bold">
               <label className="form-label">Autore</label>
-              <input type="text" name="author" className="form-control" placeholder="Inserisci qui il tuo nome" />
+              <input value={formData.author} type="text" name="author" className="form-control" placeholder="Inserisci qui il tuo nome" onChange={(e) => setFormData({ ...formData, author: e.target.value })} />
             </div>
 
             {/* INSERT TITLE OF YOUR POST HERE */}
