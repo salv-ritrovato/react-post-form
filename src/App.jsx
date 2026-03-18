@@ -23,11 +23,14 @@ function App() {
     console.log(formData);
     /* Didn't know about Axios Post syntax, checked it on the Axios Docu + AI overview to make sure I understood it*/
     axios.post("https://67c5b4f3351c081993fb1ab6.mockapi.io/api/posts", formData)
-      .then(res => { console.log("Post was sent successfully!", res.data) })
+      .then(res => {
+        console.log("Post was sent successfully!", res.data)
+        alert("Il post è stato creato con successo! 😃")
+      })
       .catch(err => {
         console.error("Post submission failed", err)
+        alert("Errore durante la creazione del post! Prova piu' tardi! ❌")
       })
-      alert("Il post è stato creato con successo!")
   }
 
 
