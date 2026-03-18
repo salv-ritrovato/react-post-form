@@ -1,3 +1,5 @@
+/* Importing React's useState hook */
+import { useState } from 'react';
 /* Import of bootstrap, bootstrap-icons and bootstrap-js */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -6,6 +8,19 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import axios from 'axios';
 
 function App() {
+
+  /* Declaring a useState object variable where we store the form data */
+  const [formData, setFormData] = useState({
+    author: "",
+    title: "",
+    body: "",
+    public: false
+  })
+
+  /* Handling form submission and preventing page reload with e.preventDefault() */
+  const handleSubmit = (e) => (
+    e.preventDefault()
+  )
 
 
 
