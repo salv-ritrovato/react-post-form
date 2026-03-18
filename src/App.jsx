@@ -31,6 +31,13 @@ function App() {
         console.error("Post submission failed", err)
         alert("Errore durante la creazione del post! Prova piu' tardi! ❌")
       })
+    /* Resetting my form to the default values */
+    setFormData({
+      author: "",
+      title: "",
+      body: "",
+      public: false
+    })
   }
 
 
